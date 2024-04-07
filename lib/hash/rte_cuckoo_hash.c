@@ -1215,32 +1215,19 @@ rte_hash_add_key(const struct rte_hash *h, const void *key)
 	return __rte_hash_add_key_with_hash(h, key, rte_hash_hash(h, key), 0);
 }
 
-int
+int32_t
 rte_hash_add_key_with_hash_data(const struct rte_hash *h,
 			const void *key, hash_sig_t sig, void *data)
 {
-	int ret;
-
 	RETURN_IF_TRUE(((h == NULL) || (key == NULL)), -EINVAL);
-	ret = __rte_hash_add_key_with_hash(h, key, sig, data);
-	if (ret >= 0)
-		return 0;
-	else
-		return ret;
+	return __rte_hash_add_key_with_hash(h, key, sig, data);
 }
 
-int
+int32_t
 rte_hash_add_key_data(const struct rte_hash *h, const void *key, void *data)
 {
-	int ret;
-
 	RETURN_IF_TRUE(((h == NULL) || (key == NULL)), -EINVAL);
-
-	ret = __rte_hash_add_key_with_hash(h, key, rte_hash_hash(h, key), data);
-	if (ret >= 0)
-		return 0;
-	else
-		return ret;
+	return __rte_hash_add_key_with_hash(h, key, rte_hash_hash(h, key), data);
 }
 
 /* Search one bucket to find the match key - uses rw lock */

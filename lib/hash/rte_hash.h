@@ -240,7 +240,7 @@ rte_hash_max_key_id(const struct rte_hash *h);
  *   - -EINVAL if the parameters are invalid.
  *   - -ENOSPC if there is no space in the hash for this key.
  */
-int
+int32_t
 rte_hash_add_key_data(const struct rte_hash *h, const void *key, void *data);
 
 /**
