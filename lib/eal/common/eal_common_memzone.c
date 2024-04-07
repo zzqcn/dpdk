@@ -23,7 +23,7 @@
 #include "eal_memcfg.h"
 
 /* Default count used until rte_memzone_max_set() is called */
-#define DEFAULT_MAX_MEMZONE_COUNT 2560
+#define DEFAULT_MAX_MEMZONE_COUNT 8192
 
 int
 rte_memzone_max_set(size_t max)
