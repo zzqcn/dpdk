@@ -1,0 +1,18 @@
+#ifndef __TSRN10_PCS_H__
+#define __TSRN10_PCS_H__
+
+#include "base/tsrn10_common.h"
+
+#define TSRN10_SERDES		(0x40000)
+#define TSRN10_PCS_OFFSET	(0x1000)
+
+#define TSRN10_PCS_BASE(i)	(TSRN10_SERDES + TSRN10_PCS_OFFSET * (i))
+#define TSRN10_PCS_1G_OR_10G	BIT(13)
+#define TSRN10_PCS_SPPEED_MASK	GENMASK(4, 2)
+#define TSRN10_PCS_SPPEED_10G	(0x0)
+#define TSRN10_PCS_SPPEED_40G	(0xc)
+#define TSRN10_PCS_LINK_SPEED	(0x30000)
+#define TSRN10_PCS_LINKUP	BIT(2)
+#define TSRN10_PCS_LINK_STATUS	(0x30001)
+#define TSRN10_PCS_LINK_READY	(0x46)
+#endif /* __TSRN10_PCS_H__ */
