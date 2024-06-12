@@ -57,7 +57,7 @@ drivers = [
         'tap',
         'thunderx',
         'txgbe',
-        'tsrn10',
+#'tsrn10',
         'vdev_netvsc',
         'vhost',
         'virtio',
